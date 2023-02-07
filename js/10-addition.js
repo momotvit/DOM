@@ -1,5 +1,12 @@
-// Example 1. Створити список технологій що вивчаються на курсі Fullstack за допомогою js
+// Example 1. Створити список технологій що вивчаються
+// на курсі Fullstack за допомогою js
+
+
+
 const technologies = ['HTML', 'CSS', 'JavaScript', 'React', 'Node'];
+
+
+
 
 const container = document.querySelector('#main-container');
 const ulEl = document.createElement('ul');
@@ -13,7 +20,8 @@ technologies.forEach((technologyItem) => {
   // liEl.textContent = technologyItem;
   // ulEl.append(liEl)
 
-  const liEl = `<li>${technologyItem}</li>`;
+    const liEl = `<li>${technologyItem}</li>`;
+    
   ulEl.insertAdjacentHTML('afterbegin', liEl);
 });
 
@@ -26,7 +34,8 @@ technologies.forEach((technologyItem) => {
 
 container.append(ulEl);
 
-//Example 2. Створити кілька кнопок на основі масива з обєктами використовуючи createElement
+//Example 2. Створити кілька кнопок на основі масива з 
+// обєктами використовуючи createElement
 const colors = [
   {
     label: 'red',
@@ -46,24 +55,28 @@ const colors = [
   },
 ];
 
-const buttonsContainer = document.createElement('div');
-buttonsContainer.classList = 'btn-container';
-buttonsContainer.classList.add('visible', 'green');
-// buttonsContainer.classList = 'btn-container-new';
 
-colors.forEach(({ color, label }) => {
-  const btnEl = document.createElement('button');
-  btnEl.textContent = label;
-  btnEl.style.backgroundColor = color;
-  btnEl.style.margin = '10px';
-  btnEl.style.padding = '10px';
+const btnsContainer = document.createElement('div');
+btnsContainer.classList = "coolBtns";
 
-  buttonsContainer.append(btnEl);
+colors.forEach(({ label, color }) => {
+    const btnEl = document.createElement("button");
+    btnEl.textContent = label;
+    btnEl.style.backgroundColor = color;
+    btnEl.style.color = 'orange';
+    btnEl.style.borderRadius = "5px";
+    btnEl.style.minWidth = "70px";
+    btnEl.style.borderColor = color;
+    btnEl.style.margin = '10px';
+    btnEl.style.padding = '10px';
+    btnsContainer.prepend(btnEl);
 });
+    
+container.append(btnsContainer);
 
-container.append(buttonsContainer);
 
-//3. Створити сайт з такою розміткою використовуючи лише JS в html файлі має бути пусто
+//3. Створити сайт з такою розміткою використовуючи 
+//лише JS в html файлі має бути пусто
 const data = {
   title: '- Michel Legrand -',
   imgUrl:
