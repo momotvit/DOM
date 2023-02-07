@@ -104,10 +104,10 @@ const caption = document.createElement('figcaption');
 
 //2 Модифікувати елемент
 title.textContent = data.title;
-title.setAttribute('id', 'title');
-
-figure.setAttribute('id', 'img-div');
-
+// title.setAttribute('id', 'title');
+title.id = "title";
+// figure.setAttribute('id', 'img-div');
+figure.id = "img-div";
 image.setAttribute('id', 'image');
 image.src = data.imgUrl;
 image.alt = data.imgCaption;
@@ -124,7 +124,7 @@ asideContainer.insertAdjacentHTML(
   'beforeend',
   `<article id="tribute-info">
         <div id="intro">
-            <p>&bull; Michel Legrand (1932 - 2019) was a famous French musician. &bull;</p>
+            <p>&#9752; Michel Legrand (1932 - 2019) was a famous French musician. &#9752;</p>
         </div>
         <div class="test"><p>1</p></div>
         <div class="test"><p>2</p></div>
@@ -147,14 +147,14 @@ asideContainer.insertAdjacentHTML(
     </article>`
 );
 
-const article = document.querySelector('#tribute-info');
+// const article = document.querySelector('#tribute-info');
 
-console.log(article.firstChild); // текст
-console.log(article.firstElementChild); // елемент
+// console.log(article.firstChild); // текст
+// console.log(article.firstElementChild); // елемент
 
-const elementsTest = document.querySelectorAll('.item');
+// const elementsTest = document.querySelectorAll('.item');
 
-elementsTest.forEach((element) => {
-  console.log('Elemnt', element.firstElementChild);
-  // console.log(`Elemnt: ${element.firstElementChild}`);
-});
+// elementsTest.forEach((element) => {
+//   console.log('Elemnt', element.firstElementChild);
+//   // console.log(`Elemnt: ${element.firstElementChild}`);
+// });
